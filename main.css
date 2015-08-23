@@ -1,0 +1,39 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: #010312;
+}
+
+#zoom,
+#bodies {
+	position: fixed;
+	padding: 10px 15px;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0.2);
+	font: 12px sans-serif;
+	color: #FFF;
+}
+
+#zoom {
+	right: 0;
+}
+
+#bodies {
+	left: 0;
+}
+
+#form {
+	display: block;
+	width: 120px;
+	padding: 10px;
+	position: fixed;
+	top: 40px;
+	right: 1px;
+	background-color: rgba(255, 255, 255, 0.2);
+	text-align: center;
+}
+
+input {
+	width: 100px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="n-body simulation for the web.">
+	<meta name="author" content="Nelson Yeung">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<base target="_blank">
+
+	<title>n-body simulation - Nelson Yeung</title>
+
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<div id="zoom">Zoom: 100%</div>
+	<div id="bodies">Bodies: 0</div>
+	<div id="form">
+		<input id="bodies-input" type="number" value="300">
+		<button id="generate-btn" onclick="generate()">Random</button>
+		<button id="simple-btn" onclick="simple()">Simple orbit</button>
+		<button id="start-btn" onclick="startSim()">Start</button>
+		<button id="stop-btn" onclick="stopSim()">Stop</button>
+	</div>
+
+	<script src="multi.js"></script>
+</body>
+</html>
