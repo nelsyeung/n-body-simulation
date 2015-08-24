@@ -24,21 +24,9 @@ var zoom = 1;
  * Simulation variables
  */
 var G = 1;
-var dt = 0.3;
+var dt = 0.5;
 var bodies = [];
 var simWorker;
-
-window.requestAnimFrame = (function(){
-	'use strict';
-	return window.requestAnimationFrame ||
-		window.webkitRequestAnimationFrame ||
-		window.oRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		window.msRequestAnimationFrame ||
-		function (callback) {
-			window.setTimeout(callback, 20);
-		};
-})();
 
 function Vector(x, y, z) {
 	'use strict';
@@ -105,7 +93,7 @@ function simple() {
 function generate() {
 	'use strict';
 	var bodiesInput = document.getElementById('bodies-input').value;
-	var v = bodiesInput / 10;
+	var v = bodiesInput / 12;
 
 	bodies = [];
 
@@ -142,7 +130,7 @@ function simulate() {
 			simWorker.onmessage = function(e) {
 				bodies = e.data[0];
 				draw();
-				requestAnimFrame(simulate);
+				setTimeout(simulate, 20);
 			};
 		}
 	}
@@ -192,13 +180,13 @@ function draw() {
 			setZoom();
 		}
 
-		radius = zoom * body.radius * (body.currPos.z + viewDist) / viewDist;
+		radius = Math.round(zoom * body.radius * (body.currPos.z + viewDist) / viewDist);
 
-		x = (x - minX) / (maxX - minX) * winWidth;
-		y = (y - minY) / (maxY - minY) * winHeight;
+		x = Math.round((x - minX) / (maxX - minX) * winWidth);
+		y = Math.round((y - minY) / (maxY - minY) * winHeight);
 
 		if (radius <= 0) {
-			radius = 0.1;
+			radius = 0;
 		}
 
 		ctx.beginPath();
