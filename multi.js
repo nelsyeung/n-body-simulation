@@ -165,6 +165,8 @@ function draw() {
 
 	ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
+	$bodies.innerHTML = 'Bodies: ' + bodies.length;
+
 	for (var i = 0; i < bodies.length; ++i) {
 		body = bodies[i];
 		x = body.currPos.x + maxX / 2;
