@@ -140,7 +140,7 @@ function simple() {
 	$zoom.innerHTML = 'Zoom: 100%';
 	$bodies.innerHTML = 'Bodies: ' + bodies.length;
 
-	stop();
+	stopSim();
 	requestAnimFrame(calculate);
 }
 
@@ -171,7 +171,7 @@ function generate() {
 	$zoom.innerHTML = 'Zoom: 100%';
 	$bodies.innerHTML = 'Bodies: ' + bodies.length;
 
-	stop();
+	stopSim();
 	requestAnimFrame(calculate);
 }
 
